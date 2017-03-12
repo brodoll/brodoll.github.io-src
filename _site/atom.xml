@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Data Session</title>
+ <link href="http://brodoll.github.io/atom.xml" rel="self"/>
+ <link href="http://brodoll.github.io/"/>
+ <updated>2017-03-12T13:29:02-03:00</updated>
+ <id>http://brodoll.github.io</id>
+ <author>
+   <name>Guilherme Pedrosa</name>
+   <email>guilherme[dot]pedrosa(at)gmail[/dot]com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Pesquisa Reprodutível</title>
+   <link href="http://brodoll.github.io/2017/01/28/estrutura_msc.html"/>
+   <updated>2017-01-28T00:00:00-03:00</updated>
+   <id>http://brodoll.github.io/2017/01/28/estrutura_msc</id>
+   <content type="html">&lt;p&gt;Antes de inciar o desenvolvimento do meu mestrado me deparei com o seguinte dilema: como organizar o diretório principal? Existe uma maneira ótima e/ou recomendada para organizar os arquivos? &lt;/p&gt;
+
+&lt;p&gt;Em busca de uma estrutura de organização dos diretórios para realização do mestrado topei com o conceito de &lt;em&gt;preoductible research&lt;/em&gt; ou pesquisa reprodutível. O tema me fascinou desde o princípio, pois como pesquisador tentar reproduzir o feito de outros autores é algo imprescindível e que todos faremos. Devemos, portanto, estar preparados para auxiliar outros pesquisadores a utilizar o nosso trabalho. Isto é o ápice da disseminação do conhecimento e pode ser feito de diversas formas, dentre elas a mais óbvia (mas não simplies) é a escrita objetiva e lúcida de artigos científicos. &lt;/p&gt;
+
+&lt;p&gt;Para áreas da ciência que lidam com análise de dados, porém, o tema toma outras proporções. Além da metodologia, códigos e dados podem tornar-se fontes de erros, acarretando em discrepâncias entre os resultados obtidos por diferentes pesquisadores. Com o intuito de agilizar e conferir transparência à disseminação do conhecimento correto, há um movimento que tem como objetivo compartilhar os códigos, softwares e dados para que outros pesquisadores possam reproduzir os resultados com maior facilidade. Faço das palavras do &lt;a href=&quot;http://danielmarcelino.github.io/blog/2016/reproducible-research.html&quot;&gt;Daniel Marcelino&lt;/a&gt; as minhas: &lt;strong&gt;mesmos dados + mesmos scripts = mesmos resultados&lt;/strong&gt;. Foi com esta premissa que decidi seguir adiante com o projeto do mestrado, a premissa de uma realizar uma pesquisa reprodutível.&lt;/p&gt;
+
+&lt;p&gt;Antes de tudo, gostaria de reforçar que elaborar projetos reprodutíveis necessitarão de uma modificação no modo de trabalho de muitos. Comigo não foi diferente. Três pontos que me chamaram bastante atenção foram:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Estruturação de diretórios&lt;/li&gt;
+&lt;li&gt;Programação literária&lt;/li&gt;
+&lt;li&gt;Controle de versão&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Organizando a casa: estrutura de diretórios&lt;/h2&gt;
+
+&lt;p&gt;O primeiro parece óbvio, mas faz grande diferença no longo prazo. Não, não sou apenas eu quem diz isto. Basta ver iniciativas como &lt;a href=&quot;http://projecttemplate.net/index.html&quot;&gt;ProjectTemplate&lt;/a&gt; para se ter uma noção. Uma boa estrutura de diretório pode favorecer a boa documentação do projeto, o facilitamento de compartilhamento e promover boa práticas de programação científica como a utilização de testes de unidade e profiling. Adianto que não segui à risca estas recomendações. Contudo, fiquei bastante satisfeito adotando a seguinte estrutura de diretórios:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;tree -d
+.
+├── data
+│   ├── case_study
+├── docear
+├── literature
+│   ├── Academic works
+│   ├── Books
+│   ├── Misc
+│   ├── Papers
+│   ├── Presentations
+│   ├── Reports
+│   ├── Standards
+│   └── White papers
+├── other
+│   ├── Corrections
+│   ├── Meetings
+│   └── Schedule
+├── routines
+│   ├── html
+│   └── libs
+├── slides
+│   └── beamer
+└── writeup
+    ├── latex
+    │   ├── doc
+    │   ├── elementos-pos-textuais
+    │   │   ├── anexos
+    │   │   └── apendices
+    │   ├── elementos-pre-textuais
+    │   ├── elementos-textuais
+    │   ├── figuras
+    │   ├── lib
+    │   └── tabelas
+    └── Notes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Enquanto este setup não oferece algumas benécies ofertadas pela adoção de um esquema mais completo como o do ProjectTemplate, ele permitiu:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Portabilidade&lt;/strong&gt;: Todos estes diretórios encontram-se em uma pasta denominada &lt;em&gt;Thesis&lt;/em&gt; dentro do meu Dropbox, permitindo que eu trabalhasse no projeto mesmo em diferentes máquinas;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integração&lt;/strong&gt; entre os resultados dos scripts e o texto da dissertação. Figuras eram salvas diretamente na pasta &lt;code&gt;./writeup/latex/figuras&lt;/code&gt; e tabelas na pasta &lt;code&gt;./writeup/latex/tabelas&lt;/code&gt;. Com isto, a medida que correções foram sendo necessárias nestes elementos a atualização do texto foi simplificada, bastando compilar o documento novamente.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bibliografia&lt;/strong&gt;: Incluí toda a bilbiografia utilizada no trabalho bem como o banco de referencias juntamente com o código e documento da dissertação. Vale ressaltar que a portabilidade e integração também ocorreram com o gerenciador de referências (Jabref/Docear), que serão abordados em outros posts.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Programação literária&lt;/h2&gt;
+
+&lt;p&gt;Este conceito foi criado por ninguém menos que Donald Knuth (criador do \( \LaTeX \) que argumenta que os programas de computador devem ser legíveis, assim como obras literárias são. No âmbito de pesquisas reprodutíveis, isto foi uma mudança de paradigma. Basta ver a quantidade de sistemas que &amp;quot;brotaram&amp;quot; e espalharam-se com extrema velocidade: Jupyter (antigo ipython) notebooks, Knitr e Sweave, Matlab publisher. Independente do sistema ou linguagem de programação adotada, a premissa é a mesma: não só o código é documentado, como também a interpretação dos resultados. O próprio script é então convertido em um documento html ou LaTeX, por exemplo, para publicação diretamente a partir do código fonte. A beleza disto é que qualquer pessoa que se deperar com tal trabalho poderá compreende-lo e executa-lo de forma independente. &lt;/p&gt;
+
+&lt;p&gt;É interessante notar também que sistemas como o Jupyter notebook já é linguagem agnóstico, podendo a análise ser realizada em múltiplas linguages na mesma plataforma.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;%7Battach%7D/content/2016/MatlabPublisher.png&quot; alt=&quot;Matlab Publisher&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Estrutura da imagem&lt;/p&gt;
+
+&lt;p&gt;Outro parágrafo.&lt;/p&gt;
+
+&lt;p&gt;![Matlab Publisher][id-MatPub]&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Ferramentas e métodos de organização aplicados ao mestrado</title>
+   <link href="http://brodoll.github.io/2016/11/11/serie-msc.html"/>
+   <updated>2016-11-11T00:00:00-03:00</updated>
+   <id>http://brodoll.github.io/2016/11/11/serie-msc</id>
+   <content type="html">&lt;p&gt;Desejo compartilhar através de uma série de posts o processo utilizado na elaboração de minha dissertação de mestrado. O objetivo é apresentar temas, softwares e processos que topei durante esta jornada. Os posts estão divididos nos seguintes temas:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pesquisa Reprodutível&lt;/li&gt;
+&lt;li&gt;Gerenciamento de bibliografia&lt;/li&gt;
+&lt;li&gt;Processador vs Editor de texto&lt;/li&gt;
+&lt;li&gt;LaTeX e ABNT&lt;/li&gt;
+&lt;li&gt;Elaboração de índice e Revisão Bibliográfica com Docear&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Estes tópicos contribuiram para uma elaboração organizada do trabalho e em momentos de tensão permitiram que eu mantivesse minha sanidade (ou não).&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Installing a virtualenv with python version other than system's</title>
+   <link href="http://brodoll.github.io/2016/11/10/virtualenv-other-python.html"/>
+   <updated>2016-11-10T00:00:00-03:00</updated>
+   <id>http://brodoll.github.io/2016/11/10/virtualenv-other-python</id>
+   <content type="html">&lt;p&gt;When trying to install the requirements for a course on coursera I found out that my system&amp;#39;s python distribution was a bit outdated. Since I did not want to change anything systemwide I decided to finally go for a virtual environment.&lt;/p&gt;
+
+&lt;p&gt;Creating a virtual environment (venv) is easier than I thought. A venv shadows your current python packages by creating a standalone environment where you have a python executable, pip and easy_install. This means you have all the tools to download and manage packages, and they are not installed in the local user system folders. Every package is installed relative to the folder you have created the virtualenv for.&lt;/p&gt;
+
+&lt;p&gt;As of the time of this writing, python&amp;#39;s latest reliease was the 2.7.12. If you compile a new version from source, and create a virtual environment afterwards specifying the path relative to the new python installation, you might get the same AssertionError as I did:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;AssertionError: Filename /packages/Python-2.7/Lib/os.py does not start with any of these prefixes: [&amp;#39;/usr/local&amp;#39;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The work arround to this is to compile python from source with the &lt;code&gt;prefix&lt;/code&gt; option (thanks to Drachenfels on SO):&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;./configure --prefix&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/Path/To/Where/I/Want/Python/After/Compilation/
+make
+make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This will fix any path issues from the new python executable, if you want to keep the new version in a place other than &lt;code&gt;/usr/bin/&lt;/code&gt;. Now, to create the virtual environment:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;virtualenv -p /pathToPython/Python-2.7.12/bin/python2.7  venv_name
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;venv_name
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /bin/activate
+pip install myProjectPackages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And you are all set.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Books</title>
+   <link href="http://brodoll.github.io/2014/12/30/Books.html"/>
+   <updated>2014-12-30T00:00:00-03:00</updated>
+   <id>http://brodoll.github.io/2014/12/30/Books</id>
+   <content type="html">&lt;style type=&quot;text/css&quot; media=&quot;screen&quot;&gt;
+.gr_grid_container {
+    /* customize grid container div here. eg: width: 500px; */
+}
+
+.gr_grid_book_container {
+    /* customize book cover container div here */
+    float: left;
+    width: 98px;
+    height: 160px;
+    padding: 0px 0px;
+    overflow: hidden;
+}
+&lt;/style&gt;
+
+&lt;div id=&quot;gr_grid_widget_1419980588&quot;&gt;
+    &lt;!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work --&gt;
+    &lt;h2&gt;
+        &lt;a href=&quot;https://www.goodreads.com/review/list/38529766-guilherme?shelf=read&amp;utm_medium=api&amp;utm_source=grid_widget&quot; style=&quot;text-decoration: none;&quot;&gt;Guilherme&#39;s bookshelf&lt;/a&gt;
+    &lt;/h2&gt;
+    &lt;div class=&quot;gr_grid_container&quot;&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/5080716-bem-vindo-bolsa-de-valores&quot; title=&quot;Bem-vindo à Bolsa de Valores&quot;&gt;&lt;img alt=&quot;Bem-vindo à Bolsa de Valores&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1224461632m/5080716.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/6598390-como-organizar-sua-vida-financeira&quot; title=&quot;Como organizar sua vida financeira&quot;&gt;&lt;img alt=&quot;Como organizar sua vida financeira&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1271860804m/6598390.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/20892785-investimentos-inteligentes&quot; title=&quot;Investimentos inteligentes&quot;&gt;&lt;img alt=&quot;Investimentos inteligentes&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1393200180m/20892785.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/18428215-imobilismo-em-movimento&quot; title=&quot;Imobilismo em Movimento: Da Abertura Democrática ao Governo Dilma&quot;&gt;&lt;img alt=&quot;Imobilismo em Movimento: Da Abertura Democrática ao Governo Dilma&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1378149716m/18428215.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/51504.Post_Office&quot; title=&quot;Post Office&quot;&gt;&lt;img alt=&quot;Post Office&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1388246929m/51504.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/87263.O_Alienista&quot; title=&quot;O Alienista&quot;&gt;&lt;img alt=&quot;O Alienista&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1171102216m/87263.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/62851.The_Human_Factor&quot; title=&quot;The Human Factor&quot;&gt;&lt;img alt=&quot;The Human Factor&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1347396573m/62851.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/5470.1984&quot; title=&quot;1984&quot;&gt;&lt;img alt=&quot;1984&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1348990566m/5470.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/50276.The_Devil&quot; title=&quot;The Devil&quot;&gt;&lt;img alt=&quot;The Devil&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1387349327m/50276.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/181736.The_Servant&quot; title=&quot;The Servant: A Simple Story about the True Essence of Leadership&quot;&gt;&lt;img alt=&quot;The Servant: A Simple Story about the True Essence of Leadership&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1407120749m/181736.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/15783514-the-ocean-at-the-end-of-the-lane&quot; title=&quot;The Ocean at the End of the Lane&quot;&gt;&lt;img alt=&quot;The Ocean at the End of the Lane&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1351914778m/15783514.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/9406730-beginning-database-design&quot; title=&quot;Beginning Database Design&quot;&gt;&lt;img alt=&quot;Beginning Database Design&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1285602016m/9406730.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class=&quot;gr_grid_book_container&quot;&gt;&lt;a href=&quot;https://www.goodreads.com/book/show/8558526-powerpivot-for-the-data-analyst&quot; title=&quot;PowerPivot for the Data Analyst: Microsoft Excel 2010&quot;&gt;&lt;img alt=&quot;PowerPivot for the Data Analyst: Microsoft Excel 2010&quot; border=&quot;0&quot; src=&quot;https://d.gr-assets.com/books/1347890142m/8558526.jpg&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;br style=&quot;clear: both&quot;/&gt;&lt;br/&gt;&lt;a href=&quot;https://www.goodreads.com/user/show/38529766-guilherme&quot; class=&quot;gr_grid_branding&quot; style=&quot;font-size: .9em; color: #382110; text-decoration: none; float: right; clear: both&quot;&gt;Guilherme&#39;s favorite books »&lt;/a&gt;
+        &lt;noscript&gt;&lt;br/&gt;Share &lt;a href=&quot;/&quot;&gt;book reviews&lt;/a&gt; and ratings with Guilherme, and even join a &lt;a href=&quot;/group&quot;&gt;book club&lt;/a&gt; on Goodreads.&lt;/noscript&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;script src=&quot;https://www.goodreads.com/review/grid_widget/38529766.Guilherme&#39;s%20bookshelf?cover_size=medium&amp;hide_link=&amp;hide_title=&amp;num_books=20&amp;order=a&amp;shelf=read&amp;sort=date_added&amp;widget_id=1419980588&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+</content>
+ </entry>
+ 
+
+</feed>

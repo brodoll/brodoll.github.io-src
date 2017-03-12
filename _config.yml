@@ -1,0 +1,29 @@
+# Dependencies
+markdown:         redcarpet
+highlighter: 	  pygments
+
+
+# Setup
+title:            'Data Session'
+tagline:          'by Guilherme Pedrosa'
+description:      'Data Analysis, Engineering, Finance'
+url:              http://brodoll.github.io
+baseurl:          ''
+paginate:         3
+
+author:
+  name: 'Guilherme Pedrosa'
+  email: 'guilherme[dot]pedrosa(at)gmail[/dot]com'
+  github: brodoll
+  twitter: gtpedrosa
+  linkedin: guilherme-pedrosa-73213aa0
+  goodreads: 38529766-guilherme
+  orcid: http://orcid.org/0000-0002-5814-4977
+  google_scholar: http://scholar.google.ca/citations?user=Xrn76pEAAAAJ
+  email_md5: 85aed9cac25cfc65e30e90ce806796ed
+  emailalt_md5: 3a91811708b61787ecd9018c9becc99b
+  disqus_shortname: brodoll
+  google_analytics_id: UA-93472104-1
+  google_analytics_url: brodoll.github.io
+bio: Just me
+
