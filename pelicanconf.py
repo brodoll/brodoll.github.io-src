@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Guilherme Pedrosa'
 SITENAME = u'Guilherme Pedrosa'
-SITEURL = ''
+SITEURL = 'Me'
 
 PATH = 'content'
 
@@ -20,10 +20,10 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+#LINKS = (('Pelican', 'http://getpelican.com/'),
+#         ('Python.org', 'http://python.org/'),
+#         ('Jinja2', 'http://jinja.pocoo.org/'),
+#         ('You can modify those links in your config file', '#'),)
 
 # Feeds 
 #FEEDS =  (('All posts', 'feeds/all.atom.xml'),
@@ -33,9 +33,9 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 #          ('OPW', 'feeds/tag/opw.atom.xml'),)
 
 # Social widget
-SOCIAL = (('Github', 'https://github.com/brodoll'),
-          ('Twitter', 'https://twitter.com/gtpedrosa'),
-          ('Linkedin', 'https://br.linkedin.com/in/guilherme-pedrosa-73213aa0'),)
+#SOCIAL = (('Github', 'https://github.com/brodoll'),
+#          ('Twitter', 'https://twitter.com/gtpedrosa'),
+#          ('Linkedin', 'https://br.linkedin.com/in/guilherme-pedrosa-73213aa0'),)
 
 DEFAULT_PAGINATION = 10
 
@@ -70,7 +70,9 @@ NEWEST_FIRST_ARCHIVES = False
 STATIC_PATHS = ['images', 'code']
 
 # Specify theme
-THEME = "/home/guilherme/pelican/pelican-themes/tuxlite_tbs"
+THEME = "/home/guilherme/pelican/pelican-themes/pelicanyan"
+#tuxlite_tbs"
+#pelicanyan
 
 # Plugins
 PLUGIN_PATH = '/home/guilherme/pelican/pelican-plugins'
@@ -79,3 +81,10 @@ PLUGINS = ['latex', 'neighbors', 'summary']
 # Only use LaTeX for selected articles
 
 LATEX = 'article'
+
+#Pelicanyan specific
+
+TWITTER_ACCOUNT = 'gtpedrosa'
+ROBOTS_SAVE_AS = 'robots.txt'
+HUMANS_SAVE_AS = 'humans.txt'
+SITEMAP_SAVE_AS = 'sitemap.xml'
