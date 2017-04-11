@@ -1,3 +1,6 @@
 [submodule "output"]
 	path = output
 	url = https://github.com/brodoll/brodoll.github.io
+[submodule "_site"]
+	path = _site
+	url = https://github.com/brodoll/brodoll.github.io.git

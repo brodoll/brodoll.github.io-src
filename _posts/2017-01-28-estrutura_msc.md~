@@ -5,8 +5,6 @@ comments: true
 tags: [Msc, educação, Docear]
 ---
 
-Teste: \\( \sigma \\) é legal.
-
 Antes de inciar o desenvolvimento do meu mestrado me deparei com o seguinte dilema: como organizar o diretório principal? Existe uma maneira ótima e/ou recomendada para organizar os arquivos? 
 
 Em busca de uma estrutura de organização dos diretórios para realização do mestrado topei com o conceito de *preoductible research* ou pesquisa reprodutível. O tema me fascinou desde o princípio, pois como pesquisador tentar reproduzir o feito de outros autores é algo imprescindível e que todos faremos. Devemos, portanto, estar preparados para auxiliar outros pesquisadores a utilizar o nosso trabalho. Isto é o ápice da disseminação do conhecimento e pode ser feito de diversas formas, dentre elas a mais óbvia (mas não simplies) é a escrita objetiva e lúcida de artigos científicos. 
@@ -73,11 +71,6 @@ tree -d
  É interessante notar também que sistemas como o Jupyter notebook já é linguagem agnóstico, podendo a análise ser realizada em múltiplas linguages na mesma plataforma.
 
 
-![Matlab Publisher]({attach}/content/2016/MatlabPublisher.png)
-
-Estrutura da imagem
-
-Outro parágrafo.
+![Matlab Publisher](/assets/MatlabPublisher.png)
 
 
-![Matlab Publisher][id-MatPub]

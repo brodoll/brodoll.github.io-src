@@ -1,15 +1,17 @@
 ---
 layout: post
-title: Installing a virtualenv with python version other than system's
+title: Installing a virtualenv with specific python version
 comments: true
 tags: [python, programming, virtualenv]
 ---
 
-When trying to install the requirements for a course on coursera I found out that my system's python distribution was a bit outdated. Since I did not want to change anything systemwide I decided to finally go for a virtual environment.
+When trying to install the requirements for a course on coursera I found out that my system's python distribution was a bit outdated. Since I did not want to change anything systemwide (and possibily break things) I decided to finally go for a virtual environment.
+
+<!--more-->
 
 Creating a virtual environment (venv) is easier than I thought. A venv shadows your current python packages by creating a standalone environment where you have a python executable, pip and easy\_install. This means you have all the tools to download and manage packages, and they are not installed in the local user system folders. Every package is installed relative to the folder you have created the virtualenv for.
 
-As of the time of this writing, python's latest reliease was the 2.7.12. If you compile a new version from source, and create a virtual environment afterwards specifying the path relative to the new python installation, you might get the same AssertionError as I did:
+As of the time of this writing, python's latest release was the 2.7.12. If you compile a new version from source, and create a virtual environment afterwards specifying the path relative to the new python installation, you might get the same AssertionError as I did:
 
 ~~~
 AssertionError: Filename /packages/Python-2.7/Lib/os.py does not start with any of these prefixes: ['/usr/local']
