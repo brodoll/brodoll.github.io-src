@@ -2,5 +2,8 @@
 	path = output
 	url = https://github.com/brodoll/brodoll.github.io
 [submodule "_site"]
-	path = _site
+	path = public
 	url = https://github.com/brodoll/brodoll.github.io.git
+[submodule "hemingway2"]
+	path = themes/hemingway2
+	url = https://github.com/brodoll/hemingway2.git

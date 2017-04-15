@@ -1,9 +1,8 @@
----
-layout: post
-title: Installing a virtualenv with specific python version
-comments: true
-tags: [python, programming, virtualenv]
----
++++
+date = "2016-11-10T19:11:44-03:00"
+title = "Installing a virtualenv with specific python version"
+tags = ["python", "programming", "virtualenv"]
++++
 
 When trying to install the requirements for a course on coursera I found out that my system's python distribution was a bit outdated. Since I did not want to change anything systemwide (and possibily break things) I decided to finally go for a virtual environment.
 
