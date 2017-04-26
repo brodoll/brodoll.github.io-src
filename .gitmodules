@@ -7,3 +7,6 @@
 [submodule "hemingway2"]
 	path = themes/hemingway2
 	url = https://github.com/brodoll/hemingway2.git
+[submodule "brodoll.github.io"]
+	path = public
+	url = https://github.com/brodoll/brodoll.github.io.git

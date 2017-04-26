@@ -1,0 +1,40 @@
+baseurl = "http://brodoll.github.io/"
+languageCode = "en"
+title = "Guilherme Pedrosa"
+theme = "hemingway2"
+disqusShortname = "brodoll"
+googleAnalytics = "UA-93472104-1"
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+
+[params]
+
+[params.highlight]
+style = "github"
+languages = ["python", "R", "Matlab", "bash"]
+
+[[params.social]]
+url = "https://github.com/brodoll"
+fa_icon = "fa-github"
+
+[[params.social]]
+url = "https://twitter.com/gtpedrosa"
+fa_icon = "fa-twitter"
+
+[[params.social]]
+url = "https://www.linkedin.com/in/guilherme-pedrosa-73213aa0/"
+fa_icon = "fa-linkedin"
+
+[[params.social]]
+url = "http://www.goodreads.com/user/show/38529766-guilherme"
+fa_icon = "fa-book"
+
+[[params.social]]
+url = "mailto:guilherme.pedrosa@gmail.com"
+fa_icon = "fa-envelope"
+
+[[params.social]]
+url = "/index.xml"
+fa_icon = "fa-rss"
