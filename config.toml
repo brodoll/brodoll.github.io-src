@@ -36,5 +36,9 @@ url = "mailto:guilherme.pedrosa@gmail.com"
 fa_icon = "fa-envelope"
 
 [[params.social]]
+url = "/cv.pdf"
+fa_icon = "fa-file-text"
+
+[[params.social]]
 url = "/index.xml"
 fa_icon = "fa-rss"
