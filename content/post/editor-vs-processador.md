@@ -1,0 +1,8 @@
++++
+date = "2017-10-23T17:58:45-03:00"
+title = "editor vs processador"
+tags = ["Msc","Latex"]
++++
+
+
+
