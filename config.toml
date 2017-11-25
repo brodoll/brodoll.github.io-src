@@ -15,6 +15,12 @@ category = "categories"
 style = "github"
 languages = ["python", "R", "Matlab", "bash"]
 
+[staticman]
+  endpoint = "https://api.staticman.net/v2/entry/"
+  username = "brodoll"
+  repository = "brodoll.github.io"
+  branch = "master"
+
 [[params.social]]
 url = "https://github.com/brodoll"
 fa_icon = "fa-github"
@@ -42,3 +48,5 @@ fa_icon = "fa-file-text"
 [[params.social]]
 url = "/index.xml"
 fa_icon = "fa-rss"
+
+
